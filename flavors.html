@@ -93,7 +93,6 @@ padding-top:24px;
         background-position: center;
         vertical-align: middle;
         align-content: center;
-        z-index: 1;
         overflow: hidden;
         visibility:hidden;
         -webkit-transform: translateX(0 px);
@@ -118,14 +117,14 @@ padding-top:24px;
     }
     
     .open {
-        opacity: 0.91;
-        -webkit-transition-duration: 0.3 s;
-        -moz-transition-duration: 0.2 s;
-        transition-duration: 0.3 s;
-        visibility: visible;
-        height:100%;
-        background-color:hotpink;
-    }
+        opacity: 1;
+-webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.2s;
+  transition-duration: 0.3s;
+	visibility:visible;
+	height:100%;
+	background-color:hotpink;
+} 
  @media(max-width: 767 px) {
         .open {
             min-width: 100%;
