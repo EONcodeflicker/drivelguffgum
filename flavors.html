@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<style>
+*{list-style-type: none}
+    body{
+    background: -webkit-linear-gradient( top, #0250c5, #d43f8d );
+    background: linear-gradient(top,#0250c5,#d43f8d);
+-webkit-background-clip: text;
+        height: 1600px;
+        width: 100%;
+        background-position: center;
+        overflow-x: hidden;
+        background-size : cover;
+        background-repeat : no-repeat;
+       font-size:18px;
+       font-family:Impact;
+padding-top:24px;
+    }
+    
+    h1 {
+        font-family: impact;
+        font-size: 50px;
+        text-align: center;
+        background-position: center;
+        background: -webkit-linear-gradient(top, rgb(78, 9, 143) 36%, blue);
+        background: linear-gradient(top, rgb(11, 11, 31) 36%, blue);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+    
+    .overlay ul {
+        padding-left: 60px;
+        list-style: none;
+        padding-top: 5px;
+        font-family: flavors;
+        text-align: center;
+        vertical-align: middle;
+    }
+    
+    .overlay ul a {
+        display: block;
+        font-family: evander;
+        font-size: 43px;
+        font-weight: lighter;
+        text-decoration: none;
+        padding-bottom: 0.5em;
+        cursor: pointer;
+        color: #820BDD;
+        top: 5px;
+    }
+    
+    .overlay ul a:hover {
+        font-weight: bold;
+        color: black;
+        font-family: impact;
+    }
+    
+    .overlay ul a:active {
+        color: #FCF;
+    }
+    
+    .button {
+        display:inline-block;
+        position: fixed;
+        top: 30 px;
+        left: 30 px;
+        border-bottom: 17px double #211315;
+        border-top: 6px solid #211315;
+        content: "";
+        height:5px;
+        width: 40px;
+        z-index: 3;
+        cursor: pointer;
+    }
+    
+    .button:hover {
+        border-bottom: 17 px double grey;
+        border-top: 6 px solid grey;
+    }
+    
+    .overlay {
+        position: fixed;
+        width: 25%;
+        height: 100%;
+        background-image:url("https://th.bing.com/th/id/R9f28d88dd742de2e0083db195e1d14e3?rik=ety6Wku37STWig&riu=http%3a%2f%2fwww.color-hex.com%2fpalettes%2f1149.png&ehk=wT6vUF81UgXrd3%2bJJDC%2fp%2ftX524HNi0YPLqXD5K7QvI%3d&risl=&pid=ImgRaw");
+        left: 0;
+        top: 0;
+        opacity: 0;
+        background-position: center;
+        vertical-align: middle;
+        align-content: center;
+        z-index: 1;
+        overflow: hidden;
+        -webkit-transform: translateX(0 px);
+        -moz-transform: translateX(0 px);
+        -ms-transform: translateX(0 px);
+        -o-transform: translateX(0 px);
+        transform: translateX(0 px);
+        /* Force Hardware Acceleration in WebKit */
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transition-property: -webkit - transform;
+        -moz-transition-property: -moz - transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.3 s;
+        -moz-transition-duration: 0.2 s;
+        transition-duration: 0.3 s;
+    }
+    
+    .open {
+        opacity: 0.91;
+        -webkit-transition-duration: 0.3 s;
+        -moz-transition-duration: 0.2 s;
+        transition-duration: 0.3 s;
+        visibility: visible;
+        height:100%;
+        background-color:hotpink;
+    }
+ @media(max-width: 767 px) {
+        .open {
+            min-width: 100%;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+        }
+    }
+
+
+
+.BlueberryTalkALot{
+font-family:Neuropol X;
+font-size:43px;
+color:blue;
+padding-top:25px;
+margin-top:25px;
+}
+.LimeRhyme{
+font-family:Neuropol X ;
+font-size:43px;
+color:lime;
+margin-top:25px;
+}
+.grapehaze{
+font-family:Neuropol X ;
+font-size:43px;
+color:purple;
+margin-top:25px;
+}
+.NeoPower{
+font-family:Neuropol X ;
+font-size:43px;
+color:beige;
+margin-top:25px;
+}
+.StrawberryShutIt{
+font-family:Neuropol X ;
+font-size:43px;
+color:crimson;
+}
+.LemonVenom{
+font-family:Neuropol X ;
+font-size:43px;
+color:yellow;
+margin-top:25px;
+}
+.WaterMelon{
+font-family:Neuropol X ;
+font-size:43px;
+color: red;
+margin-top:25px;
+}
+.Apple{
+font-family:Neuropol X ;
+font-size:43px;
+color:green;
+margin-top:25px;
+
+}
+</style>
+<title>Flavors</title>
+
+<body>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <div class="button">
+        <div class="overlay">
+            <ul>
+                <li><a href="index.html">Home </a></li>
+                <li><a href="flavors.html">Flavors </a></li>
+                <li><a href="about.html">About </a></li>
+                <li><a href="contact.html">Contact </a></li>
+                <li><a href="links.html">Links </a></li>
+            </ul>
+        </div>
+    </div>
+    <h1>Flavors </h1>
+
+
+    <script>
+        $('.button').on('click', function() {
+                $('.overlay').toggleClass('open');
+            }
+
+        );
+    </script>
+<center>
+
+<li class="BlueberryTalkALot">Blueberry Talk-A-Lot</li>
+Causes Incessant Talking
+<br>
+<li class="LimeRhyme">Lime Rhyme</li>
+Causes Unintentional Rhyming
+<br>
+<li class="grapehaze">Grape Haze</li>
+Effects similar to Purple Haze
+<br>
+<li class="NeoPower">Neo Power</li>
+Neopolitan Ice Cream Flavor
+<br>
+<li class="StrawberryShutIt">Strawberry Shut It</li>
+Causes the Inability to Talk
+<br>
+<li class="LemonVenom">Lemon Venom</li>
+Effects similar to pop rocks in mouth.
+<br>
+<li class="WaterMelon">Watermelon</li>
+Watermelon flavor
+<br>
+<li class="Apple">AppleNapple</li>
+Causes the person to sleep
+
+
+
+</center>
+</body>
+
+</html>
