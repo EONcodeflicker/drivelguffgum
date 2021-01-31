@@ -11,7 +11,6 @@
     body{
     background: -webkit-linear-gradient( top, #0250c5, #d43f8d);
     background: linear-gradient(top,#0250c5,#d43f8d);
-	-webkit-background-clip: text;
         height: 1600px;
         width: 100%;
         background-position: center;
@@ -211,6 +210,13 @@ margin-top:25px;
             </ul>
         </div>
     </div>
+	<script>
+        $('.button').on('click', function() {
+                $('.overlay').toggleClass('open');
+            }
+
+        );
+    </script>
     <h1>Flavors </h1>
 
 <center>
@@ -239,13 +245,7 @@ Watermelon flavor
 <li class="Apple">AppleNapple</li>
 Causes the person to sleep
 </center>
-	  <script>
-        $('.button').on('click', function() {
-                $('.overlay').toggleClass('open');
-            }
-
-        );
-    </script>
+	  
 </body>
 
 </html>
