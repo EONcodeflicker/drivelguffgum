@@ -28,6 +28,113 @@ text-shadow: 2px  3px orange;
 
 
 }
+
+.overlay ul {
+        padding-left: 25px;
+        list-style: none;
+        padding-top: 5px;
+        font-family: flavors;
+        text-align: center;
+        vertical-align: middle;
+    }
+    
+    .overlay ul a {
+        display: block;
+        font-family: evander;
+        font-size: 43px;
+        font-weight: lighter;
+        text-decoration: none;
+        padding-bottom: 0.5em;
+        cursor: pointer;
+        color: #820BDD;
+        top: 5px;  
+        left:auto;
+    }
+    
+    .overlay ul a:hover {
+        font-weight: bold;
+        color: black;
+        font-family: impact;
+    }
+    
+    .overlay ul a:active {
+        color: #FCF;
+    }
+    
+    .button {
+        display:inline-block;
+        position: fixed;
+        top: 30 px;
+        left: 30 px;
+        border-bottom: 17px double #211315;
+        border-top: 6px solid #211315;
+        content: "";
+        height:5px;
+        width: 40px;
+        z-index: 3;
+        cursor: pointer;
+    }
+    
+    .button:hover {
+        border-bottom: 17 px double grey;
+        border-top: 6 px solid grey;
+    }
+    
+    .overlay {
+        position: fixed;
+        width: 25%;
+        height: 100%;
+        background-image:url("https://th.bing.com/th/id/R9f28d88dd742de2e0083db195e1d14e3?rik=ety6Wku37STWig&riu=http%3a%2f%2fwww.color-hex.com%2fpalettes%2f1149.png&ehk=wT6vUF81UgXrd3%2bJJDC%2fp%2ftX524HNi0YPLqXD5K7QvI%3d&risl=&pid=ImgRaw");
+        left: 0;
+        top: 0;
+        background-position: center;
+        vertical-align: middle;
+        align-content: center;
+    visibility:hidden;
+        overflow: hidden;
+        -webkit-transform: translateX(0 px);
+        -moz-transform: translateX(0 px);
+        -ms-transform: translateX(0 px);
+        -o-transform: translateX(0 px);
+        transform: translateX(0 px);
+        /* Force Hardware Acceleration in WebKit */
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transition-property: -webkit - transform;
+        -moz-transition-property: -moz - transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.3 s;
+        -moz-transition-duration: 0.2 s;
+        transition-duration: 0.3 s;
+    }
+    
+    .open {
+        opacity: 1;
+        -webkit-transition-duration: 0.3 s;
+        -moz-transition-duration: 0.2 s;
+        transition-duration: 0.3 s;
+        visibility: visible;
+        height:100%;
+        background-color:hotpink;
+    }
+ @media(max-width: 767 px) {
+        .open {
+            min-width: 100%;
+            height: 100%;
+            width: 100%;
+            left: 70;
+            top: 0;
+visibility:visible;
+        }
+    }
+
+
+
 #fs-frm input,
 #fs-frm select,
 #fs-frm textarea,
@@ -137,111 +244,6 @@ background-position:center;
   margin-right: 3%;
 }
 
-
-
-.overlay ul {
-        padding-left: 25px;
-        list-style: none;
-        padding-top: 5px;
-        font-family: flavors;
-        text-align: center;
-        vertical-align: middle;
-    }
-    
-    .overlay ul a {
-        display: block;
-        font-family: evander;
-        font-size: 43px;
-        font-weight: lighter;
-        text-decoration: none;
-        padding-bottom: 0.5em;
-        cursor: pointer;
-        color: #820BDD;
-        top: 5px;  
-        left:auto;
-    }
-    
-    .overlay ul a:hover {
-        font-weight: bold;
-        color: black;
-        font-family: impact;
-    }
-    
-    .overlay ul a:active {
-        color: #FCF;
-    }
-    
-    .button {
-        display:inline-block;
-        position: fixed;
-        top: 30 px;
-        left: 30 px;
-        border-bottom: 17px double #211315;
-        border-top: 6px solid #211315;
-        content: "";
-        height:5px;
-        width: 40px;
-        z-index: 3;
-        cursor: pointer;
-    }
-    
-    .button:hover {
-        border-bottom: 17 px double grey;
-        border-top: 6 px solid grey;
-    }
-    
-    .overlay {
-        position: fixed;
-        width: 25%;
-        height: 100%;
-        background-image:url("https://th.bing.com/th/id/R9f28d88dd742de2e0083db195e1d14e3?rik=ety6Wku37STWig&riu=http%3a%2f%2fwww.color-hex.com%2fpalettes%2f1149.png&ehk=wT6vUF81UgXrd3%2bJJDC%2fp%2ftX524HNi0YPLqXD5K7QvI%3d&risl=&pid=ImgRaw");
-        left: 0;
-        top: 0;
-        background-position: center;
-        vertical-align: middle;
-        align-content: center;
-    visibility:hidden;
-        overflow: hidden;
-        -webkit-transform: translateX(0 px);
-        -moz-transform: translateX(0 px);
-        -ms-transform: translateX(0 px);
-        -o-transform: translateX(0 px);
-        transform: translateX(0 px);
-        /* Force Hardware Acceleration in WebKit */
-        -webkit-transform: translateZ(0);
-        -moz-transform: translateZ(0);
-        -ms-transform: translateZ(0);
-        -o-transform: translateZ(0);
-        transform: translateZ(0);
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        -webkit-transition-property: -webkit - transform;
-        -moz-transition-property: -moz - transform;
-        transition-property: transform;
-        -webkit-transition-duration: 0.3 s;
-        -moz-transition-duration: 0.2 s;
-        transition-duration: 0.3 s;
-    }
-    
-    .open {
-        opacity: 1;
-        -webkit-transition-duration: 0.3 s;
-        -moz-transition-duration: 0.2 s;
-        transition-duration: 0.3 s;
-        visibility: visible;
-        height:100%;
-        background-color:hotpink;
-    }
- @media(max-width: 767 px) {
-        .open {
-            min-width: 100%;
-            height: 100%;
-            width: 100%;
-            left: 70;
-            top: 0;
-visibility:visible;
-        }
-    }
 
 
 </style>
