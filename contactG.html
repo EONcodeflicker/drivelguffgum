@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+
+</head>
+<style>
+body{
+background-image:url("https://ignorelimits.com/wp-content/uploads/2017/11/chewing-gum-while-exercising.jpg") ;
+width:100%;
+height:700px;
+overflow-x:hidden;
+position:relative;
+background-repeat:no-repeat;
+background-size: cover;
+
+
+}
+h1{
+font-family:'Times New Roman', Times, serif;
+font-size:60px;
+color:cyan;
+text-align:center;
+text-shadow: 2px  3px orange;
+
+
+}
+#fs-frm input,
+#fs-frm select,
+#fs-frm textarea,
+#fs-frm fieldset,
+#fs-frm optgroup,
+#fs-frm label,
+#fs-frm #card-element:disabled {
+  font-family: inherit;
+  font-size: 100%;
+  color: inherit;
+  border: none;
+  border-radius: 0;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+}
+#fs-frm label,
+#fs-frm legend,
+#fs-frm ::placeholder {
+  font-size: .825rem;
+  margin-bottom: .5rem;
+  padding-top: .2rem;
+  display: flex;
+  align-items: baseline;
+}
+
+/* border, padding, margin, width */
+#fs-frm input,
+#fs-frm select,
+#fs-frm textarea,
+#fs-frm #card-element {
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: rgba(255,255,255,0.9);
+  padding: .75em 1rem;
+  margin-bottom: 1.5rem;
+}
+#fs-frm input:focus,
+#fs-frm select:focus,
+#fs-frm textarea:focus {
+  background-color: white;
+  outline-style: solid;
+  outline-width: thin;
+  outline-color: gray;
+  outline-offset: -1px;
+}
+#fs-frm [type="text"],
+#fs-frm [type="email"] {
+  width: 100%;
+background-position:center;
+}
+#fs-frm [type="button"],
+#fs-frm [type="submit"],
+#fs-frm [type="reset"] {
+  width: auto;
+  cursor: pointer;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+#fs-frm [type="button"]:focus,
+#fs-frm [type="submit"]:focus,
+#fs-frm [type="reset"]:focus {
+  outline: none;
+}
+#fs-frm [type="submit"],
+#fs-frm [type="reset"] {
+  margin-bottom: 0;
+}
+#fs-frm select {
+  text-transform: none;
+}
+
+#fs-frm [type="checkbox"] {
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+  appearance: checkbox;
+  display: inline-block;
+  width: auto;
+  margin: 0 .5em 0 0 !important;
+}
+
+#fs-frm [type="radio"] {
+  -webkit-appearance: radio;
+  -moz-appearance: radio;
+  appearance: radio;
+}
+
+/* address, locale */
+#fs-frm fieldset.locale input[name="city"],
+#fs-frm fieldset.locale select[name="state"],
+#fs-frm fieldset.locale input[name="postal-code"] {
+  display: inline;
+}
+#fs-frm fieldset.locale input[name="city"] {
+  width: 52%;
+}
+#fs-frm fieldset.locale select[name="state"],
+#fs-frm fieldset.locale input[name="postal-code"] {
+  width: 20%;
+}
+#fs-frm fieldset.locale input[name="city"],
+#fs-frm fieldset.locale select[name="state"] {
+  margin-right: 3%;
+}
+
+
+
+.overlay ul {
+        padding-left: 0px;
+        list-style: none;
+        padding-top: 5px;
+        font-family: flavors;
+        text-align: center;
+        vertical-align: middle;
+    }
+    
+    .overlay ul a {
+        display: block;
+        font-family: evander;
+        font-size: 43px;
+        font-weight: lighter;
+        text-decoration: none;
+        padding-bottom: 0.5em;
+        cursor: pointer;
+        color: #820BDD;
+        top: 5px;  
+        left:0%;
+    }
+    
+    .overlay ul a:hover {
+        font-weight: bold;
+        color: black;
+        font-family: impact;
+    }
+    
+    .overlay ul a:active {
+        color: #FCF;
+    }
+    
+    .button {
+        display:inline-block;
+        position: fixed;
+        top: 30 px;
+        left: 30 px;
+        border-bottom: 17px double #211315;
+        border-top: 6px solid #211315;
+        content: "";
+        height:5px;
+        width: 40px;
+        z-index: 3;
+        cursor: pointer;
+    }
+    
+    .button:hover {
+        border-bottom: 17 px double grey;
+        border-top: 6 px solid grey;
+    }
+    
+    .overlay {
+        position: fixed;
+        width: 25%;
+        height: 100%;
+        background-image:url("https://th.bing.com/th/id/R9f28d88dd742de2e0083db195e1d14e3?rik=ety6Wku37STWig&riu=http%3a%2f%2fwww.color-hex.com%2fpalettes%2f1149.png&ehk=wT6vUF81UgXrd3%2bJJDC%2fp%2ftX524HNi0YPLqXD5K7QvI%3d&risl=&pid=ImgRaw");
+        left: 0;
+        top: 0;
+        opacity: 0;
+        background-position: center;
+        vertical-align: middle;
+        align-content: center;
+    visibility:hidden;
+        overflow: hidden;
+        -webkit-transform: translateX(0 px);
+        -moz-transform: translateX(0 px);
+        -ms-transform: translateX(0 px);
+        -o-transform: translateX(0 px);
+        transform: translateX(0 px);
+        /* Force Hardware Acceleration in WebKit */
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transition-property: -webkit - transform;
+        -moz-transition-property: -moz - transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.3 s;
+        -moz-transition-duration: 0.2 s;
+        transition-duration: 0.3 s;
+    }
+    
+    .open {
+        opacity: 1;
+        -webkit-transition-duration: 0.3 s;
+        -moz-transition-duration: 0.2 s;
+        transition-duration: 0.3 s;
+        visibility: visible;
+        height:100%;
+        background-color:hotpink;
+    }
+ @media(max-width: 767 px) {
+        .open {
+            min-width: 100%;
+            height: 100%;
+            width: 100%;
+            left: 70;
+            top: 0;
+visibility:visible;
+        }
+    }
+
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<body>
+    <div class="button">
+        <div class="overlay">
+            <ul>
+                <li><a href="index.html">Home </a></li>
+                <li><a href="flavors.html">Flavors </a></li>
+                <li><a href="about.html">About </a></li>
+                <li><a href="contact.html">Contact </a></li>
+                <li><a href="links.html">Links </a></li>
+            </ul>
+        </div>
+    </div>
+	
+<script>
+        $('.button').on('click', function() {
+                $('.overlay').toggleClass('open');
+            }
+
+        );
+    </script>
+<center>
+<h1>
+Contact Us
+</h1>
+</center>
+
+<center>
+<form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://EONcodeflicker.github.io/mail.html" method="post">
+  <fieldset id="fs-frm-inputs" style="background-position:center;text-align:center;font-family:Open Sans">
+    <label  for="full-name" style="font-size: 33px;font-family:Corbel;color:black;background-position:center;text-align:center">Full Name</label>
+    <input type="text" name="name"  id="full-name" required="">
+    <label for="email-address" style="font-family:Corbel;font-size:33px;color:black;background-position:center;text-align:center">Email Address</label>
+    <input type="email" name="_replyto" id="email-address"  required="">
+    <label for="message"style="font-size: 33px;font-family:Corbel;color:black;background-position:center;text-align:center" >Message</label>
+    <textarea rows="5" name="message" id="message" required=""></textarea>
+    <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+  </fieldset>
+  <input type="submit"  value="Submit" style="font-size: 33px;font-family:Corbel;color:black;background-position:center;text-align:center;background-color:turquoise">
+</form>
+</center>
+</body>
+</html>
