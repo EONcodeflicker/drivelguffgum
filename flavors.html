@@ -205,6 +205,13 @@ color: red;
 margin-top:25px;
 text-shadow:1px 1px gold;
 }
+.OrangeKrush{
+font-family:Neuropol;
+color:orange;
+font-size: 43px;
+margin-top:25px;
+text-shadow: 1px 1px gold;
+}
 .Apple{
 font-family:  Neuropol;
 font-size:43px;
@@ -259,8 +266,10 @@ Causes the Inability to Talk
 <li class="LemonVenom">Lemon Venom</li>
 Effects similar to pop rocks in mouth.
 <br>
-<li class="WaterMelon">Watermelon</li>
-Watermelon flavor
+<li class="WaterMelon">Yellin Watermelon</li>
+Causes the person to talk louder than expected.
+<li class="OrangeKrush"> Orange Krush</li>
+No effect, but it sure tastes like orange.
 <br>
 <li class="Apple">AppleNapple</li>
 Causes the person to sleep
@@ -269,44 +278,99 @@ Causes the person to sleep
 	<br>
 	<br>
 	<br>
+	
 	<div id="smart-button-container">
       <div style="text-align: center;">
-        <div id="paypal-button-container"></div>
+        <div style="margin-bottom: 1.25rem;">
+          <p>The flavors of Drivel Gurf Gum. Each flavor comes in 12 pieces.</p>
+          <select id="item-options"><option value="Blueberry Talk-A-Lot" price="1.00">Blueberry Talk-A-Lot - 1.00 USD</option><option value="Strawberry Shut It" price="1.00">Strawberry Shut It - 1.00 USD</option><option value="Grape Haze" price="2.50">Grape Haze - 2.50 USD</option><option value="Lime Rhyme" price="2.50">Lime Rhyme - 2.50 USD</option><option value="Lemon Venom" price="1.00">Lemon Venom - 1.00 USD</option><option value="Neo Power" price="1.00">Neo Power - 1.00 USD</option><option value="Yellin Watermelon" price="1.50">Yellin Watermelon - 1.50 USD</option><option value="Orange Krush" price="1.00">Orange Krush - 1.00 USD</option><option value="Apple Nappel" price="2.50">Apple Nappel - 2.50 USD</option></select>
+          <select style="visibility: hidden" id="quantitySelect"></select>
+        </div>
+      <div id="paypal-button-container"></div>
       </div>
     </div>
-  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>
-  <script>
-    function initPayPalButton() {
-      paypal.Buttons({
-        style: {
-          shape: 'pill',
-          color: 'gold',
-          layout: 'vertical',
-          label: 'pay',
-          
-        },
-
-        createOrder: function(data, actions) {
-          return actions.order.create({
-            purchase_units: [{"description":":Drivel Guff Gum:\n","amount":{"currency_code":"USD","value":1}}]
-          });
-        },
-
-        onApprove: function(data, actions) {
-          return actions.order.capture().then(function(details) {
-            alert('Transaction completed by ' + details.payer.name.given_name + '!');
-          });
-        },
-
-        onError: function(err) {
-          console.log(err);
-        }
-      }).render('#paypal-button-container');
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>
+    <script>
+      function initPayPalButton() {
+        var shipping = 0;
+        var itemOptions = document.querySelector("#smart-button-container #item-options");
+    var quantity = parseInt();
+    var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
+    if (!isNaN(quantity)) {
+      quantitySelect.style.visibility = "visible";
     }
-    initPayPalButton();
-  </script>
-	
-	
+    var orderDescription = 'The flavors of Drivel Gurf Gum. Each flavor comes in 12 pieces.';
+    if(orderDescription === '') {
+      orderDescription = 'Item';
+    }
+    paypal.Buttons({
+      style: {
+        shape: 'rect',
+        color: 'gold',
+        layout: 'vertical',
+        label: 'paypal',
+        
+      },
+      createOrder: function(data, actions) {
+        var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
+        var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
+        var tax = (0 === 0) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
+        if(quantitySelect.options.length > 0) {
+          quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
+        } else {
+          quantity = 1;
+        }
+
+        tax *= quantity;
+        tax = Math.round(tax * 100) / 100;
+        var priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
+        priceTotal = Math.round(priceTotal * 100) / 100;
+        var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
+
+        return actions.order.create({
+          purchase_units: [{
+            description: orderDescription,
+            amount: {
+              currency_code: 'USD',
+              value: priceTotal,
+              breakdown: {
+                item_total: {
+                  currency_code: 'USD',
+                  value: itemTotalValue,
+                },
+                shipping: {
+                  currency_code: 'USD',
+                  value: shipping,
+                },
+                tax_total: {
+                  currency_code: 'USD',
+                  value: tax,
+                }
+              }
+            },
+            items: [{
+              name: selectedItemDescription,
+              unit_amount: {
+                currency_code: 'USD',
+                value: selectedItemPrice,
+              },
+              quantity: quantity
+            }]
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          alert('Transaction completed by ' + details.payer.name.given_name + '!');
+        });
+      },
+      onError: function(err) {
+        console.log(err);
+      },
+    }).render('#paypal-button-container');
+  }
+  initPayPalButton();
+    </script>
 	
 </body>
 
