@@ -53,10 +53,13 @@ p{}
     
     .overlay ul a:hover {
         font-weight: bold;
-        color:darkgrey;
         font-family: impact;
 	font-size:44px;
 	text-shadow: 1px 1px black;
+	 background:-webkit-linear-gradient(top, darkgrey 95%,black 5%);
+background:linear-gradient(top, darkgrey 95%,black 5%);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
     }
     
     .overlay ul a:active {
